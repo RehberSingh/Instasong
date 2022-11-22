@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def upload_file():
-   return render_template('home2.html')
+   return render_template('index.html')
 
 	
 @app.route('/', methods = ['GET', 'POST'])
@@ -31,7 +31,7 @@ def show_results():
          else:
             return render_template('load.html')
       else:
-         return render_template('home2.html')
+         return render_template('index.html')
 
 @app.route('/random')
 def random_song():
