@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results</title>
+    <link rel="stylesheet" href="static/results.css" />
+  </head>
+    <body>
+        <section class="card-list">
+            {%for m in main_song%}
+                <article class="card">
+                    <header class="card-header">
+                    <h2>{{m.track_name}}</h2>
+                    </header>
+                    <div class="card-art" >
+                        <a href="#">
+                            <img src={{m.album_art}} />
+                        </a>
+                    </div>
+                    <div class="card-artist">
+                    <a class="artist-avatar" href="#">
+                        <img src={{m.artist_pic}} />
+                    </a>
+                    <div class="artist-name">
+                        <div class="artist-name-prefix">Artist</div>
+                        {{m.artist_name}}
+                    </div>
+                </article>
+                <article class="card-lyrics">
+                    <header class="card-header">
+                    <h2>Lyrics</h2>
+                    </header>
+                    <div class="textbox">
+                       <p>
+                        {%for l in m.lyrics%}
+                        {{l}} <br>
+                        {%endfor%}
+                       </p>
+                    </div>
+                </article>
+            {%endfor%}
+        </section>
+    </body>
+</html>
