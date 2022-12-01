@@ -7,7 +7,7 @@ def shazamAPI(wav_file):
 
     files = {'file': (wav_file, open(wav_file,'rb'), 'audio/wav')}
     headers = {
-    'X-RapidAPI-Key': '5d497fd202msh105e4b1c224dd64p140bc0jsn0b0cd4e93440',
+    'X-RapidAPI-Key': 'Insert Your Own key here',
     'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
     }
 
