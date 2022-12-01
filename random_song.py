@@ -27,8 +27,8 @@ def extra():
   conn = sqlite3.connect(r'song_data.db')
   cursor = conn.cursor()
   cursor.execute('''SELECT * FROM song_data''')
-  i = (random.randint(1,len(cursor.fetchall())),)
-  
+  i = (random.randint(1,len(cursor.fetchall())-1),)
+  print(i)
   cursor.execute('''SELECT * from song_data where id = ?''', i)
   result = cursor.fetchone()
   conn.close()

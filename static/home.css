@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 @import "results.css";
+
 body {
     padding: 0;
     margin: 0;
     background-color: #17141d;
     color: white;
     font-family: 'DM Mono', monospace;
+    align-items: center;
 }
 .button-gp{
     display: flex;
@@ -83,6 +85,7 @@ body {
 }
 
 .btn{
+    border-color: white;
     padding: 1rem;
     border-radius: 16px;
     background: #17141d;
@@ -133,6 +136,25 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
 }
+@media screen and (max-width: 450px){
+    .nav h2{
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    }
+
+    .card-header h2{
+        background: linear-gradient(90deg,#ff8a00,#e52e71);
+        text-shadow: none;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text; 
+        transition:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        transition-duration: 0.5;
+    }
+}
 
 .home::-webkit-scrollbar {
     width: 10px;
@@ -157,7 +179,7 @@ body {
     --color-brand: #57bd84;
     --font-fam: 'Lato', sans-serif;
     --height: 5rem;
-    --btn-width: 6rem;
+    --btn-width: 5rem;
     --bez: cubic-bezier(0, 0, 0.43, 1.49);
   }
   
@@ -183,7 +205,7 @@ body {
     position: relative;
   }
   
-  label {
+  .search{
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;

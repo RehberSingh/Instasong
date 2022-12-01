@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+@import 'home.css';
 
 body {
     padding: 0;
@@ -29,6 +30,7 @@ a {
     flex-direction: row;
     align-content: space-around;
     justify-content:space-evenly;
+    
 }
 .textbox::-webkit-scrollbar {
     width: 10px;
@@ -73,6 +75,7 @@ a {
     scroll-snap-align: end;
     clear: both;
     position: right;
+    
 }
 @media screen and (max-width: 450px){
     .card-list {
@@ -168,6 +171,12 @@ a {
     align-items: justify;
 }
 
+.card-art:hover{
+    opacity: 0.1;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+
 .artist-avatar {
     grid-area: auto;
     align-self: start;
@@ -224,3 +233,14 @@ a {
     background-clip: text;
     border-color: white;
 }
+
+.button{
+    display: flex;
+    padding-bottom: 2rem;
+    position: relative;
+    align-self: center;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content:space-evenly;
+}
+

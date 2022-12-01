@@ -11,7 +11,8 @@ def audio_processing(f):
         audio = video.streams.filter(only_audio=True, file_extension='mp4').first()
         audio.download()
         required_video_file = audio.default_filename
-        starttime = int(15)
+        starttime = int((video.length)/2)
+        print(starttime)
         endtime = int(starttime+5)
         ffmpeg_extract_subclip(required_video_file, starttime, endtime, targetname=str('result')+".mp4")
 
@@ -24,3 +25,6 @@ def audio_processing(f):
         return output_file
     except:
         return("Not Found")
+
+
+'''https://youtube.com/shorts/t0MFoGKC9PA?feature=share'''

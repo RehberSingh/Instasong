@@ -3,14 +3,11 @@ from shazam_core import shazamAPI
 from random_song import extra , add_song
 import os
 from output import audio_processing
-import requests
 import  validators
 
-UPLOAD_FOLDER = 'Instasong\\Uploads'
-ALLOWED_EXTENSIONS = {'wav'}
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 @app.route('/')
 def upload_file():
@@ -26,8 +23,11 @@ def show_results():
          if output_file != "Not Found":
             mainsong = shazamAPI(output_file)
             os.remove(output_file)
-            add_song(mainsong)
-            return render_template('results.html' , main_song = mainsong)
+            if mainsong != False:
+               add_song(mainsong)
+               return render_template('results.html' , main_song = mainsong)
+            else:
+               return render_template('not_found.html')
          else:
             return render_template('load.html')
       else:
@@ -40,4 +40,3 @@ def random_song():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
